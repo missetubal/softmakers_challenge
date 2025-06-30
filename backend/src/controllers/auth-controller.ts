@@ -57,7 +57,7 @@ export const login = async (req: Request, res: Response) => {
   }
 };
 
-export const listAll = async (request: Request, response: Response) => {
+export const listAll = async (response: Response) => {
   try {
     const user = await UserRepository.listAll();
 
