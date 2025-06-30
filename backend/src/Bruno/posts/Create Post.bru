@@ -1,0 +1,24 @@
+meta {
+  name: Create Post
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BASE_URL}}/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxMjQxNDc0LCJleHAiOjE3NTEzMjc4NzR9.gL3LARwMXssH9u4iObkv2nl7p99qxKFkxzwIPiOJ-bM
+}
+
+body:json {
+  {
+    "title": "Meu primeiro post",
+    "content": "Conteúdo legal aqui.",
+    "userId": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxMjQxNDc0LCJleHAiOjE3NTEzMjc4NzR9.gL3LARwMXssH9u4iObkv2nl7p99qxKFkxzwIPiOJ-bM"
+  }
+  
+}

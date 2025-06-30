@@ -1,0 +1,26 @@
+meta {
+  name: Delete Post
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{BASE_URL}}/posts/:id
+  body: json
+  auth: bearer
+}
+
+params:path {
+  id: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxMjQxNDc0LCJleHAiOjE3NTEzMjc4NzR9.gL3LARwMXssH9u4iObkv2nl7p99qxKFkxzwIPiOJ-bM
+}
+
+body:json {
+  
+  {
+    "title": "Post atualizado"
+  }
+}

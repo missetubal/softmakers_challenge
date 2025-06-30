@@ -1,0 +1,24 @@
+meta {
+  name: Get Posts by Id
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}/posts/:id
+  body: none
+  auth: bearer
+}
+
+params:path {
+  id: 2
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUxMjQxNDc0LCJleHAiOjE3NTEzMjc4NzR9.gL3LARwMXssH9u4iObkv2nl7p99qxKFkxzwIPiOJ-bM
+}
+
+body:json {
+  
+  
+}
