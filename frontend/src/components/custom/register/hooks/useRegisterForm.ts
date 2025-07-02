@@ -1,24 +1,25 @@
 import { useForm } from 'react-hook-form';
 import {
-  loginFormSchema,
-  type LoginFormSchema,
-} from '../schema/login-form-schema';
+  registerFormSchema,
+  type RegisterFormSchema,
+} from '../schema/register-form-schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuth } from '@/hooks/useAuth';
 
-export const useLoginForm = () => {
-  const { handleLogin, error } = useAuth();
+export const useRegisterForm = () => {
+  const { handleRegister, error } = useAuth();
   const form = useForm({
-    resolver: zodResolver(loginFormSchema),
+    resolver: zodResolver(registerFormSchema),
     defaultValues: {
       email: '',
       password: '',
+      confirmPassword: '',
     },
   });
 
-  const onSubmit = async (values: LoginFormSchema) => {
+  const onSubmit = async (values: RegisterFormSchema) => {
     console.log(values);
-    const success = await handleLogin(values.email, values.password);
+    const success = await handleRegister(values.email, values.password);
     if (success) {
       console.log('success');
     }

@@ -8,10 +8,10 @@ import {
   FormMessage,
 } from '../../ui/form';
 import { Input } from '../../ui/input';
-import { useLoginForm } from './hooks/useLoginForm';
+import { useRegisterForm } from './hooks/useRegisterForm';
 
-export const LoginForm = () => {
-  const { form, onSubmit, error } = useLoginForm();
+export const RegisterForm = () => {
+  const { form, onSubmit, error } = useRegisterForm();
 
   return (
     <>
@@ -39,6 +39,19 @@ export const LoginForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <Input placeholder='Password' type='password' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='confirmPassword'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm password</FormLabel>
                 <FormControl>
                   <Input placeholder='Password' type='password' {...field} />
                 </FormControl>
